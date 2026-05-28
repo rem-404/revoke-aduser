@@ -17,7 +17,7 @@ function revoke-aduser {
     [string]$surname,
         
     [Parameter(Mandatory = $false, ValueFromPipelineByPropertyName = $true)]
-    [string]$reason,
+    [string]$reason = 'not specified',
 
     [pscredential]$credential
   ) # param
@@ -42,7 +42,7 @@ function revoke-aduser {
       "`(If construct) $givenname $surname not found: log"
     }
     # if multiple match: log and do nothing
-    elseif ($found.Count -gt 1) {
+    elseif (@($found).Count -gt 1) {
       "(elseif construct) Multiple users found — manual review needed: log"
       "$givenname $surname"
     }
