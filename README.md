@@ -33,10 +33,12 @@ Revoke-ADUser -GivenName "John" -SurName "O'Conor" -Reason "Resigned"
 
 # Confirm each action individually
 Import-Csv .\revoke.csv | Revoke-ADUser -Confirm
-CSV format:
+
+# CSV format:
 GivenName,SurName,Reason
 John,Doe,Resigned
 Jane,Smith,End of Contract
+
 Reason is optional — defaults to "not specified" if not provided.
 ```
 
