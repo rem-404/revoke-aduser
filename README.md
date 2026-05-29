@@ -22,7 +22,7 @@ Sysadmins handling user offboarding in a Windows/Active Directory environment wh
 
 ```
 Usage
-powershell# Preview — shows what would happen without making any changes
+# Preview — shows what would happen without making any changes
 Import-Csv .\revoke.csv | Revoke-ADUser -WhatIf
 
 # Bulk offboarding from CSV
