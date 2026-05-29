@@ -29,6 +29,7 @@ function Revoke-ADUser {
     # Dynamic parameters for AD commands
     $adParams = @{
       Credential = $cred # <-- Change this to $Credential if used by a domain account
+      ErrorAction = 'Stop'
     }
 
   }
